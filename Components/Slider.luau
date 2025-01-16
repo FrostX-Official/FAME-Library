@@ -42,6 +42,7 @@ function Slider:new(config: FameSliderConfig)
 	fameDefaults.sliderDefaults(slider)
 	slider.LayoutOrder = Window.ContentIndex
 	
+	local titleText: TextLabel = slider:WaitForChild("Title")
 	local minText: TextLabel = slider:WaitForChild("Min")
 	local maxText: TextLabel = slider:WaitForChild("Max")
 	local valueText: TextLabel = slider:WaitForChild("Value")
@@ -49,6 +50,7 @@ function Slider:new(config: FameSliderConfig)
 	local progress: Frame = sliderBG:WaitForChild("Progress")
 	local hitbox: TextButton = sliderBG:WaitForChild("Hitbox")
 	
+	titleText.Text = config.Text
 	minText.Text = self.Min
 	maxText.Text = self.Max
 	valueText.Text = self.Default
