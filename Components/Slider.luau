@@ -1,7 +1,7 @@
 local Slider = {}
 Slider.__index = Slider
 
-local fameDefaults = require(script.Parent.Parent:WaitForChild("Defaults"))
+local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))()
 
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")

@@ -3,10 +3,10 @@ Window.__index = Window
 
 local Components = script.Parent
 
-local fameDefaults = require(Components.Parent:WaitForChild("Defaults"))
-local Button = require(Components:WaitForChild("Button"))
-local Slider = require(Components:WaitForChild("Slider"))
-local Toggle = require(Components:WaitForChild("Toggle"))
+local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))()
+local Button = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Components/Button.luau"))()
+local Slider = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Components/Slider.luau"))()
+local Toggle = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Components/Toggle.luau"))()
 
 export type FameWindowConfig = {
 	Name: string
