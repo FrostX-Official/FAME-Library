@@ -1,8 +1,6 @@
 local Window = {}
 Window.__index = Window
 
-local Components = script.Parent
-
 local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))()
 local Button = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Components/Button.luau"))()
 local Slider = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Components/Slider.luau"))()
