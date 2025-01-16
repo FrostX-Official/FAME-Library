@@ -1,7 +1,7 @@
 local Button = {}
 Button.__index = Button
 
-local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))()
+local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))
 local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local Debris = game:GetService("Debris")
