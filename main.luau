@@ -12,8 +12,8 @@ A roblox UI library for cool people
 
 local Players = game:GetService("Players")
 
-local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))
-local Window = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Components/Window.luau"))
+local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))()
+local Window = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Components/Window.luau"))()
 
 local Player = Players.LocalPlayer
 local PlayerGui = Player.PlayerGui

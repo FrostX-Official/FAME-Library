@@ -1,7 +1,7 @@
 local Toggle = {}
 Toggle.__index = Toggle
 
-local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))
+local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))()
 
 export type FameToggleConfig = {
 	Text: string,
