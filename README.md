@@ -3,4 +3,4 @@
 
 # FAME-Library
 An UI library written on Luau for Roblox.
-Mostly used of exploits.
+Mostly used in exploit scripts.
