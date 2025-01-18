@@ -30,7 +30,6 @@ function Button:new(config: FameButtonConfig)
 	local button = Instance.new("TextButton")
 	fameDefaults.buttonDefaults(button)
 	button.Text = config.Text
-	button.MouseButton1Click:Connect(config.Callback)
 	button.LayoutOrder = Window.ContentIndex
 	button.Parent = Window.ContentFrame
 
