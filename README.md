@@ -39,7 +39,7 @@ local test_toggle = newWindow:newToggle({
 local test_slider = newWindow:newSlider({
 	Text = "Slider",
 	Default = 50,
-    Range = NumberRange.new(0, 100),
+	Range = NumberRange.new(0, 100),
 	Callback = function(value: number): nil
 		print(value)
 	end

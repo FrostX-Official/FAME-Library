@@ -29,8 +29,8 @@ local FAME_Parent 	= type(gethui) == "function" and typeof(gethui()) == "Instanc
 local utils 		= RunService:IsStudio() and require(script:WaitForChild("Utils")) or loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Utils.luau"))()
 load = utils.load
 
-local Defaults 	= load("Defaults")
-local Window 		= load("Components/Window")
+local Defaults		= load("Defaults")
+local Window		= load("Components/Window")
 
 -- Config Type
 

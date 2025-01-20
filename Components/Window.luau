@@ -14,13 +14,13 @@ local RunService = cloneref(game:GetService("RunService"))
 local utils = RunService:IsStudio() and require(script.Parent.Parent:WaitForChild("Utils")) or loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Utils.luau"))()
 load = utils.load
 
-local Defaults = load("Defaults")
+local Defaults	= load("Defaults")
 
 -- Components
 
-local Button = load("Components/Button")
-local Slider = load("Components/Slider")
-local Toggle = load("Components/Toggle")
+local Button	= load("Components/Button")
+local Slider	= load("Components/Slider")
+local Toggle	= load("Components/Toggle")
 
 -- Config Type
 
