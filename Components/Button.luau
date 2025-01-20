@@ -7,9 +7,9 @@ end
 
 -- Services
 
-local TweenService 	= cloneref(game:GetService("TweenService"))
-local RunService 	= cloneref(game:GetService("RunService"))
-local Players 		= cloneref(game:GetService("Players"))
+local TweenService	= cloneref(game:GetService("TweenService"))
+local RunService	= cloneref(game:GetService("RunService"))
+local Players		= cloneref(game:GetService("Players"))
 local Debris 		= cloneref(game:GetService("Debris"))
 
 -- Defaults

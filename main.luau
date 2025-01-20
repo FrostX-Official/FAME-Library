@@ -16,9 +16,9 @@ end
 
 -- Services
 
-local RunService 	= cloneref(game:GetService("RunService"))
-local CoreGui 		= cloneref(game:GetService("CoreGui"))
-local Players 		= cloneref(game:GetService("Players"))
+local RunService	= cloneref(game:GetService("RunService"))
+local CoreGui		= cloneref(game:GetService("CoreGui"))
+local Players		= cloneref(game:GetService("Players"))
 
 -- Define GUIs Parent
 
