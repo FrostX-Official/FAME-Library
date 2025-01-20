@@ -1,15 +1,27 @@
 local defaults = {}
 
-local UserInputService = game:GetService("UserInputService")
-local TweenService = game:GetService("TweenService")
-local RunService = game:GetService("RunService")
-local Players = game:GetService("Players")
-local Debris = game:GetService("Debris")
+cloneref = cloneref or function(obj)
+	return obj
+end
+
+-- Services
+
+local UserInputService 	= cloneref(game:GetService("UserInputService"))
+local TweenService 		= cloneref(game:GetService("TweenService"))
+local RunService 		= cloneref(game:GetService("RunService"))
+local Players 			= cloneref(game:GetService("Players"))
+local Debris 			= cloneref(game:GetService("Debris"))
+
+-- Some Variables
 
 local Player = Players.LocalPlayer
 local Mouse = Player:GetMouse()
 
-defaults.contentOffset = 40
+-- Internal Settings
+
+defaults.contentOffset = 40 -- Do not change
+
+-- Local Presets
 
 local function padding()
 	local padding = Instance.new("UIPadding")
@@ -33,6 +45,7 @@ local function stroke()
 	stroke.Color = Color3.new(0.72549, 0.588235, 0.901961)
 	return stroke
 end
+
 local function strokeframe()
 	local frame = Instance.new("Frame")
 	frame.AnchorPoint = Vector2.new(.5,.5)
@@ -42,6 +55,8 @@ local function strokeframe()
 	stroke().Parent = frame
 	return frame
 end
+
+-- Defaults
 
 function defaults.guiDefaults(gui: ScreenGui)
 	gui.ResetOnSpawn = false
@@ -242,5 +257,7 @@ function defaults.toggleDefaults(toggle: TextButton)
 	padding().Parent = toggle
 	strokeframe().Parent = toggle
 end
+
+--
 
 return defaults

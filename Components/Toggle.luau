@@ -1,13 +1,30 @@
 local Toggle = {}
 Toggle.__index = Toggle
 
-local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))()
+cloneref = cloneref or function(obj)
+	return obj
+end
+
+-- Services
+
+local RunService = cloneref(game:GetService("RunService"))
+
+-- Defaults
+
+local utils = RunService:IsStudio() and require(script.Parent.Parent:WaitForChild("Utils")) or loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Utils.luau"))()
+load = utils.load
+
+local Defaults = load("Defaults")
+
+-- Config Type
 
 export type FameToggleConfig = {
 	Text: string,
 	Callback: () -> nil,
 	Default: boolean
 }
+
+-- Main
 
 function Toggle:new(config: FameToggleConfig)
 	local Window = self
@@ -18,7 +35,7 @@ function Toggle:new(config: FameToggleConfig)
 	Window.ContentIndex += 1
 	
 	local toggle = Instance.new("TextButton")
-	fameDefaults.toggleDefaults(toggle)
+	Defaults.toggleDefaults(toggle)
 	toggle.Text = config.Text
 	toggle.LayoutOrder = Window.ContentIndex
 	local strokeframe: Frame = toggle.Frame
@@ -50,5 +67,7 @@ function Toggle:new(config: FameToggleConfig)
 
 	return self
 end
+
+--
 
 return Toggle

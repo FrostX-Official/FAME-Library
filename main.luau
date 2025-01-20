@@ -6,40 +6,55 @@ FAME.__index = FAME
 Name: FAME
 Author: frostxoff
 Description:
-A roblox UI library for cool people
+An UI library written on Luau for Roblox.
 
 --]]
 
-local RunService = game:GetService("RunService")
-local CoreGui = game:GetService("CoreGui")
-local Players = game:GetService("Players")
-local FAME_Parent = type(gethui) == "function" and typeof(gethui()) == "Instance" and gethui() or RunService:IsStudio() and Players.LocalPlayer.PlayerGui or CoreGui
+local cloneref = cloneref or function(obj)
+	return obj
+end
 
--- Do not use in production / Detectable (remove after some testing)
--- Might aswell create new dev branch for stuff like this.
-warn("[FAME] Using", FAME_Parent.Name, "as GUI parent")
+-- Services
 
-local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))()
-local Window = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Components/Window.luau"))()
+local RunService 	= cloneref(game:GetService("RunService"))
+local CoreGui 		= cloneref(game:GetService("CoreGui"))
+local Players 		= cloneref(game:GetService("Players"))
+
+-- Define GUIs Parent
+
+local FAME_Parent 	= type(gethui) == "function" and typeof(gethui()) == "Instance" and gethui() or RunService:IsStudio() and Players.LocalPlayer.PlayerGui or CoreGui
+
+-- FAME Libraries
+
+local utils 		= RunService:IsStudio() and require(script:WaitForChild("Utils")) or loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Utils.luau"))()
+load = utils.load
+
+local Defaults 	= load("Defaults")
+local Window 		= load("Components/Window")
+
+-- Config Type
 
 export type FameConfig = {
-	Name: string
+	Name: string,
+	Utils: {any}? -- Change default utils library with your own if you want
 }
+
+-- Main
 
 function FAME.new(config: FameConfig)
 	local self = setmetatable({}, FAME)
 	self.Config = config
+	self.WindowsCount = 0
 	
 	local screenGui = Instance.new("ScreenGui")
 	screenGui.Name = self.Config.Name
 	
-	fameDefaults.guiDefaults(screenGui)
+	Defaults.guiDefaults(screenGui)
 	
 	screenGui.Parent = FAME_Parent
 	screenGui.Enabled = true
 	
 	self.ScreenGui = screenGui
-	self.WindowsCount = 0
 
 	return self
 end

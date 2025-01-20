@@ -1,18 +1,37 @@
 local Button = {}
 Button.__index = Button
 
-local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))()
-local TweenService = game:GetService("TweenService")
-local Players = game:GetService("Players")
-local Debris = game:GetService("Debris")
+cloneref = cloneref or function(obj)
+	return obj
+end
+
+-- Services
+
+local TweenService 	= cloneref(game:GetService("TweenService"))
+local RunService 	= cloneref(game:GetService("RunService"))
+local Players 		= cloneref(game:GetService("Players"))
+local Debris 		= cloneref(game:GetService("Debris"))
+
+-- Defaults
+
+local utils = RunService:IsStudio() and require(script.Parent.Parent:WaitForChild("Utils")) or loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Utils.luau"))()
+load = utils.load
+
+local Defaults = load("Defaults")
+
+-- Some Variables
 
 local Player = Players.LocalPlayer
 local Mouse = Player:GetMouse()
+
+-- Config Type
 
 export type FameButtonConfig = {
 	Text: string,
 	Callback: () -> nil
 }
+
+-- Main
 
 local function corner()
 	local corner = Instance.new("UICorner")
@@ -28,7 +47,7 @@ function Button:new(config: FameButtonConfig)
 	Window.ContentIndex += 1
 	
 	local button = Instance.new("TextButton")
-	fameDefaults.buttonDefaults(button)
+	Defaults.buttonDefaults(button)
 	button.Text = config.Text
 	button.LayoutOrder = Window.ContentIndex
 	button.Parent = Window.ContentFrame
@@ -61,5 +80,7 @@ function Button:new(config: FameButtonConfig)
 	
 	return self
 end
+
+--
 
 return Button

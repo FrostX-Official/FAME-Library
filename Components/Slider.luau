@@ -1,14 +1,29 @@
 local Slider = {}
 Slider.__index = Slider
 
-local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))()
+cloneref = cloneref or function(obj)
+	return obj
+end
 
-local UserInputService = game:GetService("UserInputService")
-local RunService = game:GetService("RunService")
-local Players = game:GetService("Players")
+-- Services
+
+local UserInputService 	= cloneref(game:GetService("UserInputService"))
+local RunService 		= cloneref(game:GetService("RunService"))
+local Players 			= cloneref(game:GetService("Players"))
+
+-- Defaults
+
+local utils = RunService:IsStudio() and require(script.Parent.Parent:WaitForChild("Utils")) or loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Utils.luau"))()
+load = utils.load
+
+local Defaults = load("Defaults")
+
+-- Some Variables
 
 local Player = Players.LocalPlayer
 local Mouse = Player:GetMouse()
+
+-- Config Type
 
 export type FameSliderConfig = {
 	Text: string,
@@ -16,6 +31,8 @@ export type FameSliderConfig = {
 	Range: NumberRange,
 	Default: number
 }
+
+-- Main
 
 local function xscale(GuiObject)
 	local X = Mouse.X - GuiObject.AbsolutePosition.X
@@ -39,7 +56,7 @@ function Slider:new(config: FameSliderConfig)
 	Window.ContentIndex += 1
 	
 	local slider = Instance.new("Frame")
-	fameDefaults.sliderDefaults(slider)
+	Defaults.sliderDefaults(slider)
 	slider.LayoutOrder = Window.ContentIndex
 	
 	local titleText: TextLabel = slider:WaitForChild("Title")
@@ -91,5 +108,7 @@ function Slider:new(config: FameSliderConfig)
 
 	return self
 end
+
+--
 
 return Slider
