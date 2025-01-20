@@ -15,6 +15,10 @@ local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
 local FAME_Parent = type(gethui) == "function" and typeof(gethui()) == "Instance" and gethui() or RunService:IsStudio() and Players.LocalPlayer.PlayerGui or CoreGui
 
+-- Do not use in production / Detectable (remove after some testing)
+-- Might aswell create new dev branch for stuff like this.
+warn("[FAME] Using", FAME_Parent.Name, "as GUI parent")
+
 local fameDefaults = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Defaults.luau"))()
 local Window = loadstring(game:HttpGet("https://raw.githubusercontent.com/FrostX-Official/FAME-Library/refs/heads/main/Components/Window.luau"))()
 
