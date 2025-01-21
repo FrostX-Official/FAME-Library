@@ -48,10 +48,10 @@ local test_slider = newWindow:newSlider({
 
 # TODO
 - new components:
- - dropdowns
- - color picker
- - keybinder
- - label
-- custom components creation and custom windows (like key system)
+	- dropdowns
+	- color picker
+	- keybinder
+	- label
+- custom components and custom windows creation (like key system)
 - color theme setting
-- compiler for studio rbxm
+- compiler for studio rbxm file with ModuleScript inside
