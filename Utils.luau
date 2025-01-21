@@ -10,8 +10,6 @@ Change util.FAMEINSTANCE to your FAME ModuleScript Instance if you're testing in
 
 --]]
 
-local oldloadstring = loadstring
-
 util.cloneref = cloneref or function(obj)
 	return obj
 end

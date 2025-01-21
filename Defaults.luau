@@ -6,20 +6,20 @@ end
 
 -- Services
 
-local UserInputService	= cloneref(game:GetService("UserInputService"))
-local TweenService		= cloneref(game:GetService("TweenService"))
-local RunService		= cloneref(game:GetService("RunService"))
-local Players			= cloneref(game:GetService("Players"))
-local Debris			= cloneref(game:GetService("Debris"))
+local UserInputService		= cloneref(game:GetService("UserInputService"))
+local TweenService			= cloneref(game:GetService("TweenService"))
+local RunService			= cloneref(game:GetService("RunService"))
+local Players				= cloneref(game:GetService("Players"))
+local Debris				= cloneref(game:GetService("Debris"))
 
 -- Some Variables
 
-local Player			= Players.LocalPlayer
-local Mouse				= Player:GetMouse()
+local Player				= Players.LocalPlayer
+local Mouse					= Player:GetMouse()
 
 -- Internal Settings
 
-defaults.contentOffset	= 40 -- Do not change
+defaults.contentOffset		= 40 -- Do not change
 
 -- Local Presets
 

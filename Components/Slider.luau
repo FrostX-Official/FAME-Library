@@ -7,9 +7,9 @@ end
 
 -- Services
 
-local UserInputService	= cloneref(game:GetService("UserInputService"))
-local RunService		= cloneref(game:GetService("RunService"))
-local Players			= cloneref(game:GetService("Players"))
+local UserInputService		= cloneref(game:GetService("UserInputService"))
+local RunService			= cloneref(game:GetService("RunService"))
+local Players				= cloneref(game:GetService("Players"))
 
 -- Defaults
 
