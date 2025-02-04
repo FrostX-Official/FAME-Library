@@ -106,13 +106,7 @@ function defaults.frameDefaults(frame: Frame)
 	frame.BackgroundTransparency = .2
 	
 	corner().Parent = frame
-	
-	local padding = Instance.new("UIPadding")
-	padding.PaddingTop = UDim.new(0,10)
-	padding.PaddingLeft = UDim.new(0,10)
-	padding.PaddingRight = UDim.new(0,10)
-	padding.PaddingBottom = UDim.new(0,10)
-	padding.Parent = frame
+	padding().Parent = frame
 	
 	-------- Frame Drag
 	
